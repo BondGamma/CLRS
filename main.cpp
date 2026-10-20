@@ -1,16 +1,21 @@
 #include <iostream>
 #include <vector>
-#include "insertion.hpp"
+#include "addbits.hpp"
 
 int main()
-{
-    std::vector<int> x = {4,5,1,2,3,5,6,19,83,92};
-    insertion_sort(x);
+{   
+    int A[] = {1, 1, 1, 0, 1, 1, 0, 1, 1, 1}; // 887
+    int B[] = {0, 0, 1, 0, 0, 1, 0, 0, 0, 0}; // 292
+    int n = 10;
+    int* myArr = addBits(A,B,n);
 
-    for (auto& i : x){
-        std::cout << i << " ";
+    for (int i = n; i >= 0; i--){
+        std::cout << myArr[i];
     }
     std::cout << '\n';
 
+    delete[] myArr;
+
+    
     return 0;
 }
