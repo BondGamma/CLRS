@@ -1,17 +1,16 @@
 #include <iostream>
 #include <vector>
+#include "insertion.hpp"
 
 int main()
 {
+    std::vector<int> x = {4,5,1,2,3,5,6,19,83,92};
+    insertion_sort(x);
 
-    std::vector<std::pair<int, int>> temp= {};
-    for (int i = 0; i < 3; i++){
-        temp.push_back({8,i});
+    for (auto& i : x){
+        std::cout << i << " ";
     }
-
-
-
-
+    std::cout << '\n';
 
     return 0;
 }
