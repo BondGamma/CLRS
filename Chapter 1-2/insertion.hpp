@@ -1,11 +1,13 @@
 #ifndef INSERTION_HPP
 #define INSERTION_HPP
 
+#include <vector>
+
 template <typename T>
 void insertionSort(std::vector<T>& container){
-    for (std::size_t i = 1; i < static_cast<std::size_t>(container.size()); ++i){
+    for (int i = 1; i < static_cast<int>(container.size()); ++i){
         T key = container[i];
-        std::size_t j = i - 1;
+        int j = i - 1;
         while (j >= 0 && container[j] >= key){
             container[j+1] = container[j];
             j = j - 1;
