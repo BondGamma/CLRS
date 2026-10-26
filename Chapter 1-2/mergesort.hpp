@@ -2,6 +2,7 @@
 #define MERGE_SORT_HPP
 
 #include <vector>
+#include "insertion.hpp"
 
 template <typename T>
 void merge(std::vector<T>& arr, int left, int mid, int right){
@@ -48,6 +49,21 @@ void merge_sort(std::vector<T>& arr, int left, int right){
     int q = left + (right - left) / 2;
     merge_sort(arr,left,q);
     merge_sort(arr,q+1,right);
+    merge(arr,left,q,right);
+}
+
+
+
+template <typename T>
+void merge_sortModified(std::vector<T>& arr, int left, int right){
+    if (left >= right){
+        return;
+    } 
+    int q = left + (right - left) / 2;
+    // merge_sort(arr,left,q);
+    insertionSort(arr, left, q);
+    // merge_sort(arr,q+1,right);
+    insertionSort(arr,q+1,right);
     merge(arr,left,q,right);
 }
 

@@ -17,6 +17,20 @@ void insertionSort(std::vector<T>& container){
 }
 
 template <typename T>
+void insertionSort(std::vector<T>& container, int left, int right){
+    for (int i = left + 1; i < right; ++i){
+        T key = container[i];
+        int j = i - 1;
+        while (j >= 0 && container[j] >= key){
+            container[j+1] = container[j];
+            j = j - 1;
+        }
+        container[j+1] = key;
+    }
+}
+
+
+template <typename T>
 void insertionSortDecreasing(std::vector<T>& container){
     for (int i = 1; i < container.size(); ++i){
         T key = container[i];
