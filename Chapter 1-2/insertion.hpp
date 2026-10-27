@@ -44,6 +44,22 @@ void insertionSortDecreasing(std::vector<T>& container){
 }
 
 template <typename T>
+void insertionSortRecursive(std::vector<T>& A, int n){
+    if (n <= 1){
+        return;
+    }
+    insertionSortRecursive(A, n-1);
+    T key = A[n];
+    int i = n - 1;
+    while (i >= 0 && A[i] >= key){
+        A[i+1] = A[i];
+        i--;
+    }
+    A[i+1] = key;
+}
+
+
+template <typename T>
 int linearSearch(std::vector<T>& container, T searchValue){
     for (int i = 0; i < container.size(); i++){
         if (container[i] == searchValue){
