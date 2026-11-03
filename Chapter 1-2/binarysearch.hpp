@@ -3,7 +3,7 @@
 
 template <typename T>
 int binary_search(std::vector<T>& A, int num){
-    int left = 0, right = A.size()-1;
+    int left = 0, right = static_cast<int>(A.size()-1);
     while (left < right){
         int mid = left + (right - left) / 2;
     
@@ -13,8 +13,8 @@ int binary_search(std::vector<T>& A, int num){
              right = mid;
         }
     }
-    if (num == A[right]){
-        return right;
+    if (num == A[left]){
+        return left;
     } else {
         return -1;
     }
